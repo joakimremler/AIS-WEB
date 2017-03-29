@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "PlantOrNot";
+}
+
+<h2>My plants</h2>
+<div class="main">
+    <div class="col-md-6" id="MyCard">
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">Card title</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="SoilMoistureNow"></li>
+                <li class="list-group-item" id="SunlightNow"></li>
+                <li class="list-group-item" id="StartDate"></li>
+                <li class="list-group-item" id="Category"></li>
+                <li class="list-group-item" id="Updated"></li>
+                <li class="list-group-item">
+                    <div class="card-block text-center">
+                        <button class="delete">Delete</button>
+                        <button class="Edit">Edit</button>
+                        <!--<a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>   
+
+    <script>
+    $(document).ready(function () {
+        $.get("@Url.Action("GetPlant", "Plant")", function (response) {
+
+            for (var i = 0; i < response.length; i++) {
+              
+                //duplicate bootstrap card
+                var $clonedContent = $('#MyCard').clone();
+                //add headline
+                $clonedContent.find('h4').text(response[i].Name);
+                //add content
+                $clonedContent.find('#SoilMoistureNow').text("Soil Moisture: " + response[i].SoilMoistureNow + "  (Min: " + response[i].SoilMoistureMin + " Max: " + response[i].SoilMoistureMax +")");
+                $clonedContent.find('#SunlightNow').text("Sunlight: " + response[i].SunlightNow + "  (Min: " + response[i].SunlightMin + " Max: " + response[i].SunlightMax + ")");
+                $clonedContent.find('#Category').text("Category: " + response[i].Category);
+                $clonedContent.find('#StartDate').text("Planted: " + response[i].StartDate);
+                $clonedContent.find('#Updated').text("Last Update: " + response[i].Updated);
+                //Adding all content to main div
+               $('.main').append($clonedContent);
+            }
+
+            //remove original card
+            $("#MyCard:first").remove();
+
+        });
+    });
+
+
+    </script>

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "PlantsJS";
+}
+
+<h2>PlantsJS</h2>
+
+<p id="reply"/>
+    <button>Get api ID 1</button>
+
+</p>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("http://localhost:61347/api/Plant/1", function (response) {
+                //response
+                console.log(response);
+                $("#reply").text(response.Name);
+            });
+        });
+    });
+
+
+</script>>
