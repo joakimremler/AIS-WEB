@@ -1,0 +1,15 @@
+﻿@model AIS_WEB.Models.PlantViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.HiddenFor(model => model.SoilMoistureMax)
+
+
+    <input type="submit" name="Submit" value="" />
+}

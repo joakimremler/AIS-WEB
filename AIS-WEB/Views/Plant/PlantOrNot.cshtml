@@ -17,10 +17,10 @@
                 <li class="list-group-item" id="Updated"></li>
                 <li class="list-group-item">
                     <div class="card-block text-center">
-                        <button class="delete">Delete</button>
-                        <button class="Edit">Edit</button>
-                        <!--<a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>-->
+                        <form>
+                            <button id="edit" type="submit" formaction="">Edit</button>
+                            <button id="delete"  type="submit" formaction="link.html">Delete</button>
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -30,21 +30,28 @@
 </div>   
 
     <script>
-    $(document).ready(function () {
-        $.get("@Url.Action("GetPlant", "Plant")", function (response) {
+        $(document).ready(function () {
+            $.get("@Url.Action("GetPlant", "Plant")", function (response) {
 
             for (var i = 0; i < response.length; i++) {
-              
+
                 //duplicate bootstrap card
                 var $clonedContent = $('#MyCard').clone();
+
                 //add headline
                 $clonedContent.find('h4').text(response[i].Name);
+
                 //add content
                 $clonedContent.find('#SoilMoistureNow').text("Soil Moisture: " + response[i].SoilMoistureNow + "  (Min: " + response[i].SoilMoistureMin + " Max: " + response[i].SoilMoistureMax +")");
                 $clonedContent.find('#SunlightNow').text("Sunlight: " + response[i].SunlightNow + "  (Min: " + response[i].SunlightMin + " Max: " + response[i].SunlightMax + ")");
                 $clonedContent.find('#Category').text("Category: " + response[i].Category);
                 $clonedContent.find('#StartDate').text("Planted: " + response[i].StartDate);
                 $clonedContent.find('#Updated').text("Last Update: " + response[i].Updated);
+
+                //adding path to buttons
+                $clonedContent.find('#edit').attr('formaction', '/Plant/edit/${response[i].ID}')
+                $clonedContent.find('#delete').attr('formaction', '/delete/${response[i].ID}');
+
                 //Adding all content to main div
                $('.main').append($clonedContent);
             }

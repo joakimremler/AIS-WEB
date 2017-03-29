@@ -42,10 +42,29 @@ namespace AIS_WEB.Controllers
         public ActionResult GetPlant()
         {
             PlantViewModel plant = new PlantViewModel();
-            System.Diagnostics.Debug.WriteLine("start");
-            System.Diagnostics.Debug.WriteLine(Json(plant.getPlantAPI(), JsonRequestBehavior.AllowGet));
+            //System.Diagnostics.Debug.WriteLine("start");
+            //System.Diagnostics.Debug.WriteLine(Json(plant.getPlantAPI(), JsonRequestBehavior.AllowGet));
             return Json(plant.getPlantAPI(), JsonRequestBehavior.AllowGet);
 
         } 
+
+        [HttpPost]
+        public  ActionResult Create(PlantViewModel plant)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(PlantViewModel plant)
+        {
+            //edit api
+            return View();
+        }
     }
 }

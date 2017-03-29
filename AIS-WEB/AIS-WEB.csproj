@@ -198,6 +198,8 @@
     <Content Include="Views\Plant\GetPlants.cshtml" />
     <Content Include="Views\Plant\PlantsJS.cshtml" />
     <Content Include="Views\Plant\PlantOrNot.cshtml" />
+    <Content Include="Views\Plant\Create.cshtml" />
+    <Content Include="Views\Plant\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
