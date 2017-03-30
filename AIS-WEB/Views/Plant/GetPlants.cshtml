@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AIS_WEB.Models.PlantViewModel
+
+@{
     ViewBag.Title = "PassValue";
 }
 
@@ -8,7 +10,7 @@
     @for (int i = 0; i < ViewBag.Numb; i++)
     {
         <li>
-            @ViewBag.text;
+            @ViewBag.Name;
         </li>
     }
 
