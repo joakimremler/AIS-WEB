@@ -200,6 +200,7 @@
     <Content Include="Views\Plant\PlantOrNot.cshtml" />
     <Content Include="Views\Plant\Create.cshtml" />
     <Content Include="Views\Plant\Edit.cshtml" />
+    <Content Include="Views\Plant\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

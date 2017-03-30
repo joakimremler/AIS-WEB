@@ -1,0 +1,46 @@
+﻿@model AIS_WEB.Models.PlantViewModel
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="main">
+    <div class="row">
+        <form method="post">
+
+            <h2>Do you wont to remove this plant?</h2>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <p>Id: <strong>@Model.ID</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Name: <strong>@Model.Name</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Minimul soil moisture: <strong>@Model.SoilMoistureMin</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Maximum soil moisture: <strong>@Model.SoilMoistureMax</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Minimum sunlight: <strong>@Model.SunlightMin</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Maximum sunlight: <strong>@Model.SunlightMax</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>Category: <strong>@Model.Category</strong></p>
+                </div>
+                <div class="form-group">
+                    <p>ID_Type: <strong>@Model.ID_Type</strong></p>
+                </div>
+                <button type="submit" class="btn btn-primary">Delete</button>
+
+            </div>
+
+            <div class="col-md-6">
+                <img src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Plant" />
+            </div>
+        </form>
+    </div>
+</div>
