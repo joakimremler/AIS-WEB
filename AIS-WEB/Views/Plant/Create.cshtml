@@ -1,15 +1,52 @@
-﻿@model AIS_WEB.Models.PlantViewModel
-@{
+﻿@{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<div class="main">
+    <div class="row">
+        <form method="post">
 
-@using (Html.BeginForm())
-{
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" value="">
+                </div>
+                <div class="form-group">
+                    <label for="SoilMoistureMin">Minimul soil moisture</label>
+                    <input type="text" class="form-control" id="SoilMoistureMin" name="SoilMoistureMin" value="">
+                </div>
+                <div class="form-group">
+                    <label for="SoilMoistureMax">Maximum soil moisture</label>
+                    <input type="text" class="form-control" id="SoilMoistureMax" name="SoilMoistureMax" value="">
+                </div>
+                <div class="form-group">
+                    <label for="SunlightMin">Minimum sunlight</label>
+                    <input type="text" class="form-control" id="SunlightMin" name="SunlightMin" value="">
+                </div>
+                <div class="form-group">
+                    <label for="SunlightMax">Maximum sunlight</label>
+                    <input type="text" class="form-control" id="SunlightMax" name="SunlightMax" value="">
+                </div>
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <input type="text" class="form-control" id="Category" name="Category" value="">
+                </div>
+                <div class="form-group">
+                    <label for="ID_Type">ID_Type</label>
+                    <input type="text" class="form-control" id="ID_Type" name="ID_Type" value="">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
 
-    @Html.HiddenFor(model => model.SoilMoistureMax)
-
-
-    <input type="submit" name="Submit" value="" />
-}
+            <div class="col-md-6">
+                <img src="http://www.hughes.com/images/missing-visual.png" width="100%" alt="Plant" />
+                <input type="text" class="form-control" id="picUrl" value="" placeholder="Add url to a picture...">
+            </div>
+            <input type="hidden" class="form-control" name="ID" id="ID" value="0">
+            <input type="hidden" class="form-control" name="SoilMoistureNow" id="SoilMoistureNow" value="0">
+            <input type="hidden" class="form-control" name="SunlightNow" id="SunlightNow" value="0">
+            <input type="hidden" class="form-control" name="StartDate" id="StartDate" value="0">
+            <input type="hidden" class="form-control" name="Updated" id="Updated" value="0">
+        </form>
+    </div>
+</div>

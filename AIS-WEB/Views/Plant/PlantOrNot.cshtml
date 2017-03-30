@@ -3,35 +3,50 @@
     ViewBag.Title = "PlantOrNot";
 }
 
+
 <div class="main">
-   <h2>My plants</h2>
-
-    @foreach (var item in @Model)
-    {
-        <div class="col-md-4" id="MyCard">
-            <div class="card" style="width: 25rem">
-                <img class="card-img-top" src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Card image cap"/>
-                <div class="card-block">
-                    <h4 class="card-title">@item.Name </h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="SoilMoistureNow">@item.SoilMoistureNow  (Min: @item.SoilMoistureMin Max: @item.SoilMoistureMax)</li>
-                        <li class="list-group-item" id="SunlightNow">@item.SunlightNow  (Min: @item.SunlightMin Max: @item.SunlightMax)</li>
-                        <li class="list-group-item" id="StartDate">@item.StartDate</li>
-                        <li class="list-group-item" id="Category">@item.Category</li>
-                        <li class="list-group-item" id="Updated">@item.Updated</li>
-                        <li class="list-group-item">
-                            <div class="card-block text-center">
-                                <form>
-                                    <button id="edit" type="submit" formaction="/Plant/edit/@item.ID">Edit</button>
-                                    <button id="delete" type="submit" formaction="/Plant/delete/@item.ID">Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
+    <div class="row">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>My Plants</h2>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <button id="delete" type="submit" formaction="/Plant/create/">Create new</button>
+                </form>
             </div>
         </div>
-    }
+        <div class="row">
 
+            @foreach (var item in @Model)
+            {
+                <div class="col-md-4" id="MyCard">
+                    <div class="card" style="width: 25rem">
+                        <img class="card-img-top" src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Card image cap" />
+                        <div class="card-block">
+                            <h4 class="card-title">@item.Name </h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="SoilMoistureNow">@item.SoilMoistureNow  (Min: @item.SoilMoistureMin Max: @item.SoilMoistureMax)</li>
+                                <li class="list-group-item" id="SunlightNow">@item.SunlightNow  (Min: @item.SunlightMin Max: @item.SunlightMax)</li>
+                                <li class="list-group-item" id="StartDate">@item.StartDate</li>
+                                <li class="list-group-item" id="Category">@item.Category</li>
+                                <li class="list-group-item" id="Updated">@item.Updated</li>
+                                <li class="list-group-item">
+                                    <div class="card-block text-center">
+                                        <form>
+                                            <button id="edit" type="submit" formaction="/Plant/edit/@item.ID">Edit</button>
+                                            <button id="delete" type="submit" formaction="/Plant/delete/@item.ID">Delete</button>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
+
+

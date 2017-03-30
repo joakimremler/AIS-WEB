@@ -5,36 +5,36 @@
 
 <div class="main">
     <h2>Edit</h2>
-    <form>
+    <form method="post">
 
         <div class="col-md-6">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" value="@Model.Name">
+                <input type="text" class="form-control" id="name" name="Name" value="@Model.Name">
             </div>
             <div class="form-group">
                 <label for="SoilMoistureMin">Minimul soil moisture</label>
-                <input type="text" class="form-control" id="SoilMoistureMin" value="@Model.SoilMoistureMin">
+                <input type="text" class="form-control" id="SoilMoistureMin" name="SoilMoistureMin" value="@Model.SoilMoistureMin">
             </div>
             <div class="form-group">
                 <label for="SoilMoistureMax">Maximum soil moisture</label>
-                <input type="text" class="form-control" id="SoilMoistureMax" value="@Model.SoilMoistureMax">
+                <input type="text" class="form-control" id="SoilMoistureMax" name="SoilMoistureMax" value="@Model.SoilMoistureMax">
             </div>
             <div class="form-group">
                 <label for="SunlightMin">Minimum sunlight</label>
-                <input type="text" class="form-control" id="SunlightMin" value="@Model.SunlightMin">
+                <input type="text" class="form-control" id="SunlightMin" name="SunlightMin" value="@Model.SunlightMin">
             </div>
             <div class="form-group">
                 <label for="SunlightMax">Maximum sunlight</label>
-                <input type="text" class="form-control" id="SunlightMax" value="@Model.SunlightMax">
+                <input type="text" class="form-control" id="SunlightMax" name="SunlightMax" value="@Model.SunlightMax">
             </div>
             <div class="form-group">
                 <label for="Category">Category</label>
-                <input type="text" class="form-control" id="Category" value="@Model.Category">
+                <input type="text" class="form-control" id="Category" name="Category" value="@Model.Category">
             </div>
             <div class="form-group">
                 <label for="ID_Type">ID_Type</label>
-                <input type="text" class="form-control" id="ID_Type" value="@Model.ID_Type">
+                <input type="text" class="form-control" id="ID_Type" name="ID_Type" value="@Model.ID_Type">
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
         </div>
@@ -43,11 +43,11 @@
             <img src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Plant" />
             <input type="text" class="form-control" id="picUrl" value="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg">
         </div>
-        <input type="hidden" class="form-control" id="ID" value="@Model.ID">
-        <input type="hidden" class="form-control" id="SoilMoistureNow" value="@Model.SoilMoistureNow">
-        <input type="hidden" class="form-control" id="SunlightNow" value="@Model.SunlightNow">
-        <input type="hidden" class="form-control" id="StartDate" value="@Model.StartDate">
-        <input type="hidden" class="form-control" id="Updated" value="@Model.Updated">
+        <input type="hidden" class="form-control" name="ID" id="ID" value="@Model.ID">
+        <input type="hidden" class="form-control" name="SoilMoistureNow" id="SoilMoistureNow" value="@Model.SoilMoistureNow">
+        <input type="hidden" class="form-control" name="SunlightNow" id="SunlightNow" value="@Model.SunlightNow">
+        <input type="hidden" class="form-control" name="StartDate" id="StartDate" value="@Model.StartDate">
+        <input type="hidden" class="form-control" name="Updated" id="Updated" value="@Model.Updated">
     </form>
 </div>
 

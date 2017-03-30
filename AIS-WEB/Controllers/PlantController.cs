@@ -49,10 +49,16 @@ namespace AIS_WEB.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public  ActionResult Create(PlantViewModel plant)
         {
-
+            System.Diagnostics.Debug.WriteLine("Start 1");
             using (HttpClient client = new HttpClient())
             {
                 //Connect to server
@@ -60,7 +66,7 @@ namespace AIS_WEB.Controllers
 
                 //Clears old data???
                 client.DefaultRequestHeaders.Accept.Clear();
-
+                System.Diagnostics.Debug.WriteLine("Start 2");
                 PlantViewModel newPlant = new PlantViewModel();
                 newPlant.Name = plant.Name;
                 newPlant.SoilMoistureMin = plant.SoilMoistureMin;
@@ -73,19 +79,19 @@ namespace AIS_WEB.Controllers
                 newPlant.ID_Type = plant.ID_Type;
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
-                //string url = String.Format("http://localhost:61347/api/Plant/{0}", plant.ID);
 
-                var response = client.PostAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(
+                System.Diagnostics.Debug.WriteLine("plant name: " + plant.Name);
+                System.Diagnostics.Debug.WriteLine("newPlant name: " + newPlant.Name);
+                System.Diagnostics.Debug.WriteLine("Start 3");
+                var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
                 new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
 
 
             }
+            //edit api
+            System.Diagnostics.Debug.WriteLine("Start 4");
 
             return View();
-
-
-
-
 
             /*
             var client = new HttpClient();
@@ -145,8 +151,41 @@ namespace AIS_WEB.Controllers
         [HttpPost]
         public ActionResult Edit(PlantViewModel plant)
         {
+            System.Diagnostics.Debug.WriteLine("Start 1");
+            using (HttpClient client = new HttpClient())
+            {
+                //Connect to server
+                client.BaseAddress = new Uri("http://localhost:61347/");
+
+                //Clears old data???
+                client.DefaultRequestHeaders.Accept.Clear();
+                System.Diagnostics.Debug.WriteLine("Start 2");
+                PlantViewModel newPlant = new PlantViewModel();
+                newPlant.Name = plant.Name;
+                newPlant.SoilMoistureMin = plant.SoilMoistureMin;
+                newPlant.SoilMoistureMax = plant.SoilMoistureMax;
+                newPlant.SoilMoistureNow = plant.SoilMoistureNow;
+                newPlant.Category = plant.Category;
+                newPlant.SunlightMin = plant.SunlightMin;
+                newPlant.SunlightMax = plant.SunlightMax;
+                newPlant.SunlightNow = plant.SunlightNow;
+                newPlant.ID_Type = plant.ID_Type;
+                newPlant.StartDate = plant.StartDate;
+                newPlant.Updated = plant.Updated;
+
+                System.Diagnostics.Debug.WriteLine("plant name: " + plant.Name);
+                System.Diagnostics.Debug.WriteLine("newPlant name: " + newPlant.Name);
+                //string url = String.Format("http://localhost:61347/api/Plant/{0}", plant.ID);
+                System.Diagnostics.Debug.WriteLine("Start 3");
+                //var response = client.PostAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(
+                var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
+                new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
+
+
+            }
             //edit api
-            return View();
+            System.Diagnostics.Debug.WriteLine("Start 4");
+            return View(plant);
         }
     }
 }
