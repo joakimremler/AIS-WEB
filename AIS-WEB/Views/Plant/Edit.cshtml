@@ -1,31 +1,49 @@
 ﻿@model AIS_WEB.Models.PlantViewModel
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = Model.Name;
 }
 
-<h2>Edit</h2>
+<div class="main">
+    <h2>Edit</h2>
+    <form>
 
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" value="@Model.Name">
+            </div>
+            <div class="form-group">
+                <label for="SoilMoistureMin">Minimul soil moisture</label>
+                <input type="text" class="form-control" id="SoilMoistureMin" value="@Model.SoilMoistureMin">
+            </div>
+            <div class="form-group">
+                <label for="SoilMoistureMax">Maximum soil moisture</label>
+                <input type="text" class="form-control" id="SoilMoistureMax" value="@Model.SoilMoistureMax">
+            </div>
+            <div class="form-group">
+                <label for="SunlightMin">Minimum sunlight</label>
+                <input type="text" class="form-control" id="SunlightMin" value="@Model.SunlightMin">
+            </div>
+            <div class="form-group">
+                <label for="SunlightMax">Maximum sunlight</label>
+                <input type="text" class="form-control" id="SunlightMax" value="@Model.SunlightMax">
+            </div>
+            <div class="form-group">
+                <label for="Category">Category</label>
+                <input type="text" class="form-control" id="Category" value="@Model.Category">
+            </div>
+            <div class="form-group">
+                <label for="ID_Type">ID_Type</label>
+                <input type="text" class="form-control" id="ID_Type" value="@Model.ID_Type">
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-<script>
-        $(document).ready(function () {
-            $.get("@Url.Action("GetPlant", "Plant")", function (response) {
-
-                console.log(response);
-
-        });
-    });
+        <div class="col-md-6">
+            <img src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Plant" />
+            <input type="text" class="form-control" id="picUrl" value="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg">
+        </div>
+    </form>
+</div>
 
 
-</script>
