@@ -2,38 +2,43 @@
     ViewBag.Title = "Create";
 }
 
+
+
 <div class="main">
+    <div class="row">
+        <h2>Create</h2>
+    </div>
     <div class="row">
         <form method="post">
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="Name" value="">
+                    <input type="text" class="form-control" id="name" name="Name" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="SoilMoistureMin">Minimul soil moisture</label>
-                    <input type="text" class="form-control" id="SoilMoistureMin" name="SoilMoistureMin" value="">
+                    <input type="number" class="form-control" id="SoilMoistureMin" name="SoilMoistureMin" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="SoilMoistureMax">Maximum soil moisture</label>
-                    <input type="text" class="form-control" id="SoilMoistureMax" name="SoilMoistureMax" value="">
+                    <input type="number" class="form-control" id="SoilMoistureMax" name="SoilMoistureMax" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="SunlightMin">Minimum sunlight</label>
-                    <input type="text" class="form-control" id="SunlightMin" name="SunlightMin" value="">
+                    <input type="number" class="form-control" id="SunlightMin" name="SunlightMin" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="SunlightMax">Maximum sunlight</label>
-                    <input type="text" class="form-control" id="SunlightMax" name="SunlightMax" value="">
+                    <input type="number" class="form-control" id="SunlightMax" name="SunlightMax" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="Category">Category</label>
-                    <input type="text" class="form-control" id="Category" name="Category" value="">
+                    <input type="text" class="form-control" id="Category" name="Category" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="ID_Type">ID_Type</label>
-                    <input type="text" class="form-control" id="ID_Type" name="ID_Type" value="">
+                    <input type="number" class="form-control" id="ID_Type" name="ID_Type" value="" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Edit</button>
             </div>

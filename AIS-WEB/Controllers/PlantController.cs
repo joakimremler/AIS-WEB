@@ -91,7 +91,7 @@ namespace AIS_WEB.Controllers
             //edit api
             System.Diagnostics.Debug.WriteLine("Start 4");
 
-            return View();
+            return RedirectToAction("PlantOrNot");
 
             /*
             var client = new HttpClient();
