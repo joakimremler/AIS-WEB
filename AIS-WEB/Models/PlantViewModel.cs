@@ -24,7 +24,7 @@ namespace AIS_WEB.Models
       public int ID_Type { get; set; }
       public DateTime StartDate { get; set; }
       public DateTime Updated { get; set; }
-      public string Pic_url { get; set; }
+      public string url { get; set; }
 
 
         public List<PlantViewModel> getPlantAPI()

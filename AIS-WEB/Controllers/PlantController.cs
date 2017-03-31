@@ -53,7 +53,7 @@ namespace AIS_WEB.Controllers
                 newPlant.ID_Type = plant.ID_Type;
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
-                newPlant.Pic_url = plant.Pic_url;
+                newPlant.url = plant.url;
 
                 var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
                 Newtonsoft.Json.JsonConvert.SerializeObject(newPlant), Encoding.UTF8, "application/json")).Result;
@@ -92,7 +92,7 @@ namespace AIS_WEB.Controllers
                 newPlant.ID_Type = plant.ID_Type;
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
-                newPlant.Pic_url = plant.Pic_url;
+                newPlant.url = plant.url;
 
                 //Update api
                 var response = client.PutAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(

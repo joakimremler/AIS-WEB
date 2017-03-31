@@ -1,6 +1,6 @@
 ﻿@model List<AIS_WEB.Models.PlantViewModel>
 @{
-    ViewBag.Title = "PlantOrNot";
+    ViewBag.Title = "Index";
 }
 
 
@@ -15,11 +15,11 @@
 
             @foreach (var item in @Model)
             {
-                <div class="col-md-4" id="MyCard">
+                <div class="col-xs-12 col-sm-6 col-md-4" id="MyCard">
                     <div class="card" style="width: 25rem">
-                        <img class="card-img-top" src="@item.Pic_url" width="250" height="150" alt="@item.Name" />
+                        <img class="card-img-top" src="@item.url" width="250" height="150" alt="@item.Name" />
                         <div class="card-block">
-                            <h4 class="card-title">@item.Name </h4>
+                            <h4 class="card-title">@item.Name</h4>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item" id="SoilMoistureNow"><p>Moisture: @item.SoilMoistureNow  (Min: @item.SoilMoistureMin Max: @item.SoilMoistureMax)</p></li>
                                 <li class="list-group-item" id="SunlightNow"><p>Sunlight: @item.SunlightNow  (Min: @item.SunlightMin Max: @item.SunlightMax)</p></li>

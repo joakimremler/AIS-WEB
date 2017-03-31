@@ -4,9 +4,7 @@
 <div class="main">
     <div class="row">
         <form method="post">
-
             <h2>Do you won't to remove this plant?</h2>
-
             <div class="col-md-6">
                 <div class="form-group">
                     <p>Id: <strong>@Model.ID</strong></p>
@@ -35,10 +33,10 @@
                 <button type="submit" class="btn btn-primary">Delete</button>
 
             </div>
-
-            <!--<div class="col-md-6">
-                <img src="Model.Pic_url" width="100%" alt="Plant" />
-            </div>-->
+            
+            <div class="col-md-6">
+                <img src="@Model.url" width="100%" alt="Plant" />
+            </div>
         </form>
     </div>
 </div>
