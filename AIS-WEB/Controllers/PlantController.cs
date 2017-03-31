@@ -56,7 +56,7 @@ namespace AIS_WEB.Controllers
                 newPlant.Pic_url = plant.Pic_url;
 
                 var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
-                new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
+                Newtonsoft.Json.JsonConvert.SerializeObject(newPlant), Encoding.UTF8, "application/json")).Result;
             }
             return RedirectToAction("Index");
         }
@@ -79,7 +79,7 @@ namespace AIS_WEB.Controllers
 
                 //Clears old data???
                 client.DefaultRequestHeaders.Accept.Clear();
-                System.Diagnostics.Debug.WriteLine("Start 2");
+
                 PlantViewModel newPlant = new PlantViewModel();
                 newPlant.Name = plant.Name;
                 newPlant.SoilMoistureMin = plant.SoilMoistureMin;
@@ -93,9 +93,10 @@ namespace AIS_WEB.Controllers
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
                 newPlant.Pic_url = plant.Pic_url;
+
                 //Update api
                 var response = client.PutAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(
-                new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
+                Newtonsoft.Json.JsonConvert.SerializeObject(newPlant), Encoding.UTF8, "application/json")).Result;
             }
             return RedirectToAction("Index");
         }
@@ -118,6 +119,7 @@ namespace AIS_WEB.Controllers
 
                 //Clears old data???
                 client.DefaultRequestHeaders.Accept.Clear();
+
                 //delete api based on id
                 var response = client.DeleteAsync("http://localhost:61347/api/Plant/" + plant.ID).Result;
             }

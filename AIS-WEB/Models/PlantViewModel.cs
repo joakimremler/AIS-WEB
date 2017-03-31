@@ -33,8 +33,8 @@ namespace AIS_WEB.Models
             var client = new System.Net.WebClient();
             //download API as a string
             var content = client.DownloadString(url);
-            var sterializer = new JavaScriptSerializer();
-            plants = sterializer.Deserialize<List<PlantViewModel>>(content).ToList();
+            plants = JsonConvert.DeserializeObject<List<PlantViewModel>>(content).ToList();
+
             return plants;
         }
 
@@ -44,8 +44,8 @@ namespace AIS_WEB.Models
             var client = new System.Net.WebClient();
             //download API as a string
             var content = client.DownloadString(url);
-            var sterializer = new JavaScriptSerializer();
-            plantitem = sterializer.Deserialize<PlantViewModel>(content);
+            plantitem = JsonConvert.DeserializeObject<PlantViewModel>(content);
+
             return plantitem;
         }
 
