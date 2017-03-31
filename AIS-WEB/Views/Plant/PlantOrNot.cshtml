@@ -10,11 +10,6 @@
             <div class="col-md-6">
                 <h2>My Plants</h2>
             </div>
-            <div class="col-md-6">
-                <form>
-                    <button id="delete" type="submit" formaction="/Plant/create/">Create new</button>
-                </form>
-            </div>
         </div>
         <div class="row">
 
@@ -22,7 +17,7 @@
             {
                 <div class="col-md-4" id="MyCard">
                     <div class="card" style="width: 25rem">
-                        <img class="card-img-top" src="http://img.tradera.net/images/761/243536761_8d2b401b-b3c6-474c-819e-b513b4cc1cce.jpg" width="100%" alt="Card image cap" />
+                        <img class="card-img-top" src="@item.Pic_url" width="250" height="150" alt="@item.Name" />
                         <div class="card-block">
                             <h4 class="card-title">@item.Name </h4>
                             <ul class="list-group list-group-flush">

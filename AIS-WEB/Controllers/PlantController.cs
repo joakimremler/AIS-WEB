@@ -79,6 +79,7 @@ namespace AIS_WEB.Controllers
                 newPlant.ID_Type = plant.ID_Type;
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
+                newPlant.Pic_url = plant.Pic_url;
 
                 var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
                 new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
@@ -118,6 +119,7 @@ namespace AIS_WEB.Controllers
                 newPlant.ID_Type = plant.ID_Type;
                 newPlant.StartDate = plant.StartDate;
                 newPlant.Updated = plant.Updated;
+                newPlant.Pic_url = plant.Pic_url;
                 //Update api
                 var response = client.PutAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(
                 new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
@@ -151,4 +153,3 @@ namespace AIS_WEB.Controllers
         }
     }
 }
- 
