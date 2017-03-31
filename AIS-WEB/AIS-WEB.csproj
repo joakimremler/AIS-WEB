@@ -190,17 +190,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Plant\View.cshtml" />
-    <Content Include="Views\Plant\GetPlants.cshtml" />
-    <Content Include="Views\Plant\PlantsJS.cshtml" />
-    <Content Include="Views\Plant\PlantOrNot.cshtml" />
+    <Content Include="Views\Plant\Index.cshtml" />
     <Content Include="Views\Plant\Create.cshtml" />
     <Content Include="Views\Plant\Edit.cshtml" />
     <Content Include="Views\Plant\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -15,39 +15,13 @@ namespace AIS_WEB.Controllers
     public class PlantController : Controller
     {
 
-        //private List<PlantViewModel> plants;
-        //private PlantViewModel plant;
-
-        // GET: Plant
         public ActionResult Index()
-        {
-            //Get all plants from API
-            //client.BaseAddress = new Uri("http://localhost:61347/");
-
-
-            return View();
-        }
-
-        //localhost:52844/Plant/PlantsJs
-        public ActionResult PlantsJS()
-        {
-
-            return View();
-
-        }
-
-        public ActionResult PlantOrNot()
         {
             PlantViewModel plant = new PlantViewModel();
             var result = plant.getPlantAPI();
             return View(result);
         }
 
-        public ActionResult GetPlant()
-        {
-            return View();
-
-        }
 
         [HttpGet]
         public ActionResult Create()
@@ -84,7 +58,7 @@ namespace AIS_WEB.Controllers
                 var response = client.PostAsync("http://localhost:61347/api/Plant/", new StringContent(
                 new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
             }
-            return RedirectToAction("PlantOrNot");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -98,7 +72,6 @@ namespace AIS_WEB.Controllers
         [HttpPost]
         public ActionResult Edit(PlantViewModel plant)
         {
-            System.Diagnostics.Debug.WriteLine("Start 1");
             using (HttpClient client = new HttpClient())
             {
                 //Connect to server
@@ -124,7 +97,7 @@ namespace AIS_WEB.Controllers
                 var response = client.PutAsync("http://localhost:61347/api/Plant/" + plant.ID, new StringContent(
                 new JavaScriptSerializer().Serialize(newPlant), Encoding.UTF8, "application/json")).Result;
             }
-            return RedirectToAction("PlantOrNot");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -138,7 +111,6 @@ namespace AIS_WEB.Controllers
         [HttpPost]
         public ActionResult Delete(PlantViewModel plant)
         {
-            System.Diagnostics.Debug.WriteLine("Start 1");
             using (HttpClient client = new HttpClient())
             {
                 //Connect to server
@@ -149,7 +121,7 @@ namespace AIS_WEB.Controllers
                 //delete api based on id
                 var response = client.DeleteAsync("http://localhost:61347/api/Plant/" + plant.ID).Result;
             }
-            return RedirectToAction("PlantOrNot");
+            return RedirectToAction("Index");
         }
     }
 }
