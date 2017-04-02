@@ -11,7 +11,7 @@ AIS WEB is a website that gives you control off all sensors and the information 
 This is also the place where you can add, remove or edit plants that is added to your system.
 
 # BETA
-This version is fully functional but i recommend to use it in privat network becuse there is no securite built in.  
+This version is fully functional but i recommend to use it in privat network becuse there is no built in securite.  
 
 ## TODO
 * Add security to the webpage that you can only POST, DELETE or PUT values to sensors that is connected to you.
@@ -38,7 +38,7 @@ This project is written in C#
 * Mysql Workbench 6.3.8
 * Microsoft Visual Studio Professional 2017
 
-## Installation (WRITE THIS!!!!!)
+## Installation
 1. Download and setup repo: [AIS-API](https://github.com/joakimremler/AIS-API)
 
 2. Download repo: [AIS-WEB](https://github.com/joakimremler/AIS-WEB)
