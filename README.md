@@ -39,11 +39,13 @@ This project is written in C#
 * Microsoft Visual Studio Professional 2017
 
 ## Installation (WRITE THIS!!!!!)
-1. Download repo: [AIS-WEB](https://github.com/joakimremler/AIS-WEB)
+1. Download repo: [AIS-API](https://github.com/joakimremler/AIS-API)
 
-2. Start AIS-API.
+2. Download repo: [AIS-WEB](https://github.com/joakimremler/AIS-WEB)
 
-3. You're done, enjoy!
+3. Start AIS-API.
+
+4. You're done, enjoy!
 
 ## Resources
 Tutorial on MVC project that connects to a API:
