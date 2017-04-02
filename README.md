@@ -39,8 +39,7 @@ This project is written in C#
 * Microsoft Visual Studio Professional 2017
 
 ## Installation (WRITE THIS!!!!!)
-1. Clone this repo and set folder Linkify to localhost or create a [Virtual directory](https://en.wikipedia.org/wiki/Virtual_directory)
-  `git clone git@github.com:joakimremler/Linkify.git`.
+1. Download repo: [AIS-WEB](https://github.com/joakimremler/AIS-WEB)
 
 2. Create a Database in Mysql called Linkify `CREATE DATABASE Linkify;`.
 
