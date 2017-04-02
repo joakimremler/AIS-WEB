@@ -41,15 +41,9 @@ This project is written in C#
 ## Installation (WRITE THIS!!!!!)
 1. Download repo: [AIS-WEB](https://github.com/joakimremler/AIS-WEB)
 
-2. Create a Database in Mysql called Linkify `CREATE DATABASE Linkify;`.
+2. Start AIS-API.
 
-3. Import `linkify.sql` MySql backup file. Navigate to assets/mysql and insert this line:
-
-    `mysql -u root -p Linkify < linkify.sql`
-
-4. Edit your settings in core/init.php.
-
-5. You're done, enjoy!
+3. You're done, enjoy!
 
 ## Resources
 Tutorial on MVC project that connects to a API:
