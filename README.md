@@ -14,9 +14,8 @@ This is also the place where you can add, remove or edit plants that is added to
 This version is fully functional but i recommend to use it in privat network becuse there is no securite built in.  
 
 ## TODO
-* Replace the simulation sensor to a real sensor that reads moisture in the soil and output the signal to AIS-Sensor.
-* Add a small electrical pump to the Raspberry pi gpio pinns and control the pump, a preferible duration is 5s.
-* Add protection
+* Add security to the webpage that you can only POST, DELETE or PUT values to sensors that is connected to you.
+* Login
 * Add multiply users
 
 ## Languages
@@ -24,9 +23,10 @@ This project is written in C#
 
 ## Features
 * Easy to manages.
-* Outputs data.
+* Outputs data from sensors.
+* Add, edit and Delete values.
 * Connected to a REST API.
-* Updates API with sensor values.
+* Updates API with new information.
 
 
 ## Tested software versions
@@ -53,5 +53,5 @@ This project is written in C#
 5. You're done, enjoy!
 
 ## Resources
-Great tutorial on C# REST API Client:
-[API Client](https://www.youtube.com/watch?v=i1HSG7ttDtM)
+Tutorial on MVC project that connects to a API:
+[MVC connect to API](https://www.youtube.com/watch?v=P8QtHXmCpCc)
