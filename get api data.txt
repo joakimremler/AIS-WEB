@@ -1,9 +1,0 @@
-http://codereview.stackexchange.com/questions/138229/calling-web-api-from-mvc-generic-way-of-approach
-
-
-POST:
-http://stackoverflow.com/questions/36836510/calling-the-rest-api-post-from-mvc
-
-
-call:
-https://www.youtube.com/watch?v=P8QtHXmCpCc
